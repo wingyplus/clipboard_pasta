@@ -7,7 +7,8 @@ defmodule Clipboard.MixProject do
       version: "0.1.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
@@ -21,7 +22,17 @@ defmodule Clipboard.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.23.0"}
+      {:rustler, "~> 0.23.0"},
+      {:ex_doc, "~> 0.27", only: :dev, runtime: false}
+    ]
+  end
+
+  defp package do
+    [
+      name: "clipboard",
+      description: "A library to manipulate OS clipboard.",
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/wingyplus/clipboard"}
     ]
   end
 end

@@ -6,15 +6,30 @@ defmodule Clipboard do
   alias Clipboard.NIF
 
   @doc """
-  Copy `content` into clipboard.
+  Copy `term` into clipboard.
+
+  The function will convert `term` into a string content when the `term` is
+  not a binary. Add `:pretty` to the `opts` to copy with pretty structure.
 
   ## Examples
 
       iex> Clipboard.copy("Hello")
       :ok
+      iex> Clipboard.copy({:ok, "Hello"})
+      :ok
+      iex> Clipboard.paste()
+      {:ok, "{:ok, \\"Hello\\"}"}
   """
-  @spec copy(String.t()) :: :ok | :error
-  def copy(content) when is_binary(content), do: NIF.copy(content)
+  @spec copy(term(), Keyword.t()) :: :ok | :error
+  def copy(term, opts \\ []) do
+    term
+    |> to_binary(opts)
+    |> NIF.copy()
+  end
+
+  defp to_binary(term, opts) do
+    inspect(term, pretty: opts[:pretty] || false)
+  end
 
   @doc """
   Get the content from clipboard.
@@ -24,7 +39,7 @@ defmodule Clipboard do
       iex> Clipboard.copy("Hello")
       :ok
       iex> Clipboard.paste()
-      {:ok, "Hello"}
+      {:ok, "\\"Hello\\""}
   """
   @spec paste() :: {:ok, String.t()} | :error
   def paste(), do: NIF.paste()

@@ -1,6 +1,6 @@
 # Clipboard
 
-**TODO: Add description**
+`clipboard` is a library to manipulate OS clipboard.
 
 ## Installation
 

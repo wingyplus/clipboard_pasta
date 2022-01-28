@@ -43,7 +43,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "clipboard_nif"
+name = "clipboard_pasta_nif"
 version = "0.1.0"
 dependencies = [
  "copypasta",

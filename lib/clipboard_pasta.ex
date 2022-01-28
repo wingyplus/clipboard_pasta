@@ -1,9 +1,9 @@
-defmodule Clipboard do
+defmodule ClipboardPasta do
   @moduledoc """
   Clipboard module provides a set of functions to copy/paste OS clipboard.
   """
 
-  alias Clipboard.NIF
+  alias ClipboardPasta.NIF
 
   @doc """
   Copy `term` into clipboard.
@@ -13,11 +13,11 @@ defmodule Clipboard do
 
   ## Examples
 
-      iex> Clipboard.copy("Hello")
+      iex> ClipboardPasta.copy("Hello")
       :ok
-      iex> Clipboard.copy({:ok, "Hello"})
+      iex> ClipboardPasta.copy({:ok, "Hello"})
       :ok
-      iex> Clipboard.paste()
+      iex> ClipboardPasta.paste()
       {:ok, "{:ok, \\"Hello\\"}"}
   """
   @spec copy(term(), Keyword.t()) :: :ok | :error
@@ -32,9 +32,9 @@ defmodule Clipboard do
 
   ## Examples
 
-      iex> [1, 2, 3] |> Clipboard.copy_tap()
+      iex> [1, 2, 3] |> ClipboardPasta.copy_tap()
       [1, 2, 3]
-      iex> Clipboard.paste()
+      iex> ClipboardPasta.paste()
       {:ok, "[1, 2, 3]"}
   """
   @spec copy_tap(term(), Keyword.t()) :: term()
@@ -52,9 +52,9 @@ defmodule Clipboard do
 
   ## Examples
 
-      iex> Clipboard.copy("Hello")
+      iex> ClipboardPasta.copy("Hello")
       :ok
-      iex> Clipboard.paste()
+      iex> ClipboardPasta.paste()
       {:ok, "\\"Hello\\""}
   """
   @spec paste() :: {:ok, String.t()} | :error

@@ -1,16 +1,16 @@
-# Clipboard
+# ClipboardPasta
 
-`clipboard` is a library to manipulate OS clipboard.
+`clipboard_pasta` is a library to manipulate OS clipboard.
 
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `clipboard` to your list of dependencies in `mix.exs`:
+by adding `clipboard_pasta` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:clipboard, "~> 0.1.0"}
+    {:clipboard_pasta, "~> 0.1.0"}
   ]
 end
 ```

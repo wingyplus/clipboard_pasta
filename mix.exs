@@ -3,7 +3,7 @@ defmodule Clipboard.MixProject do
 
   def project do
     [
-      app: :clipboard,
+      app: :clipboard_pasta,
       version: "0.1.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
@@ -29,7 +29,7 @@ defmodule Clipboard.MixProject do
 
   defp package do
     [
-      name: "clipboard",
+      name: "clipboard_pasta",
       description: "A library to manipulate OS clipboard.",
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/wingyplus/clipboard"}

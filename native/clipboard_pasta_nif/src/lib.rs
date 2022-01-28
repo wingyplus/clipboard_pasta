@@ -27,4 +27,4 @@ fn paste<'a>(env: Env<'a>) -> Term<'a> {
     }
 }
 
-rustler::init!("Elixir.Clipboard.NIF", [copy, paste]);
+rustler::init!("Elixir.ClipboardPasta.NIF", [copy, paste]);

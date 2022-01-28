@@ -24,4 +24,6 @@ clipboard-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
-priv/native/libclipboard_nif.so
+
+# Shared lib.
+priv/native/libclipboard_pasta_nif.so

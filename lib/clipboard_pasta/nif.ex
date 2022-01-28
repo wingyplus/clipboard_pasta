@@ -1,5 +1,5 @@
-defmodule Clipboard.NIF do
-  use Rustler, otp_app: :clipboard, crate: "clipboard_nif"
+defmodule ClipboardPasta.NIF do
+  use Rustler, otp_app: :clipboard_pasta, crate: "clipboard_pasta_nif"
 
   def copy(_content), do: :erlang.nif_error(:nif_not_loaded)
 

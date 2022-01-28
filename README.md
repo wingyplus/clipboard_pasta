@@ -10,7 +10,7 @@ by adding `clipboard_pasta` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:clipboard_pasta, "~> 0.1.0"}
+    {:clipboard_pasta, "~> 0.1.0", github: "wingyplus/clipboard_pasta"}
   ]
 end
 ```

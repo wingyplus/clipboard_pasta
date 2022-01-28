@@ -27,6 +27,22 @@ defmodule Clipboard do
     |> NIF.copy()
   end
 
+  @doc """
+  Similar to `copy/2` but return `term` instead.
+
+  ## Examples
+
+      iex> [1, 2, 3] |> Clipboard.copy_tap()
+      [1, 2, 3]
+      iex> Clipboard.paste()
+      {:ok, "[1, 2, 3]"}
+  """
+  @spec copy_tap(term(), Keyword.t()) :: term()
+  def copy_tap(term, opts \\ []) do
+    term
+    |> tap(&copy(&1, opts))
+  end
+
   defp to_binary(term, opts) do
     inspect(term, pretty: opts[:pretty] || false)
   end
